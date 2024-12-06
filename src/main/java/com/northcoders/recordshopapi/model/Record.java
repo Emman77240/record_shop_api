@@ -6,9 +6,11 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.Instant;
 import java.util.Date;
 import java.util.List;
+
+import java.time.Instant;
+
 
 @Entity
 @Data
@@ -42,7 +44,6 @@ public class Record {
 
     @Column
     Instant modifiedDate;
-
 
 
 }

@@ -6,4 +6,5 @@ import java.util.List;
 public interface RecordShopService {
 
     List<Record> getAllRecords();
+    Record insertRecord(Record record);
 }

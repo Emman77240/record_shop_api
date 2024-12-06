@@ -22,4 +22,9 @@ public class RecordShopServiceImpl implements RecordShopService{
         return records;
     }
 
+    @Override
+    public Record insertRecord(Record record) {
+        return recordShopRepository.save(record);
+    }
+
 }

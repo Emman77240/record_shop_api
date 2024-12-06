@@ -3,7 +3,6 @@ package com.northcoders.recordshopapi.controller;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.northcoders.recordshopapi.service.RecordShopServiceImpl;
 import com.northcoders.recordshopapi.model.Record;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -18,7 +17,6 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import static org.mockito.Mockito.when;
@@ -48,7 +46,7 @@ class RecordShopControllerTest {
     void getAllRecords() throws Exception {
         // Arrange
         List<Record> records = new ArrayList<>();
-        records.add(new Record(1L, "ABBA", "Abba", List.of(new String[]{"Waterloo", "Chiquitita", "Money, Money, Money", "Dancing Queen"}), new SimpleDateFormat("yyyy-MM-dd").parse("2024-12-02"), true, new SimpleDateFormat("yyyy-MM-dd").parse("2024-12-02").toInstant(), new SimpleDateFormat("yyyy-MM-dd").parse("2024-12-02").toInstant()));
+        records.add(new Record(1L, "ABBA", "Abba", List.of(new String[]{"Waterloo", "Chiquitita", "Money, Money, Money", "Lay All Your Love", "Dancing Queen", "Gimme! Gimme! Gimme!"}), new SimpleDateFormat("yyyy-MM-dd").parse("1975-04-21"), true, new SimpleDateFormat("yyyy-MM-dd").parse("2024-12-02").toInstant(), new SimpleDateFormat("yyyy-MM-dd").parse("2024-12-02").toInstant()));
 
         // Act
         when(mockRecordShopServiceImpl.getAllRecords()).thenReturn(records);
