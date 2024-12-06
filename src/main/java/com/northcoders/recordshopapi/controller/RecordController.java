@@ -1,5 +1,6 @@
 package com.northcoders.recordshopapi.controller;
 
+import com.northcoders.recordshopapi.model.Record;
 import com.northcoders.recordshopapi.service.RecordShopService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

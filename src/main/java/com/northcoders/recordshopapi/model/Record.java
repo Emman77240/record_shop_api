@@ -7,8 +7,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.Instant;
-import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Data
@@ -29,7 +29,7 @@ public class Record {
     String artist;
 
     @Column
-    ArrayList<String> songs;
+    List<String> songs;
 
     @Column
     Date releaseDate;

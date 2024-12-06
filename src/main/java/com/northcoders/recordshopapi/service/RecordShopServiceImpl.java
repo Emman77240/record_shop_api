@@ -1,6 +1,6 @@
 package com.northcoders.recordshopapi.service;
 
-
+import com.northcoders.recordshopapi.model.Record;
 import com.northcoders.recordshopapi.repository.RecordShopRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
