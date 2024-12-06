@@ -40,7 +40,7 @@ The template contains the following dependencies:
       https://mvnrepository.com/artifact/com.h2database
 
       A fast SQL database that can run embedded or a server mode with support for transactions,
-      encryption, full search, etc. Storage can be disk-based or in-memor.
+      encryption, full search, etc. Storage can be disk-based or in-memory.
 
    
 
