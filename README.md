@@ -13,7 +13,9 @@ This setup has been tested on Intellij and it contains:
  * MIT license and contribution information
  
 
-The application exposes its health endpoint at  http://localhost:8080/api/v1/recordshop/actuator/health/
+The application's health status can be checked at:
+
+http://localhost:8080/actuator/health/
 
 ## Dependencies
 
