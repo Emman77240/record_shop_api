@@ -1,107 +1,48 @@
 package com.northcoders.recordshopapi.model;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Date;
 
 @Entity
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Record {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
-    private String name;
-    private String artist;
-    private ArrayList<String> songs;
-    private final Date releaseDate;
-    private boolean inStock;
-    private Instant createdDate;
-    private Instant modifiedDate;
+    @GeneratedValue
+    @Column(updatable = false, nullable = false)
+    Long id;
 
-    public Record(Long id, String name, String artist, ArrayList<String> songs, Date releaseDate, boolean inStock, Instant createdDate, Instant modifiedDate) {
-        this.id = id;
-        this.name = name;
-        this.artist = artist;
-        this.songs = songs;
-        this.releaseDate = releaseDate;
-        this.inStock = inStock;
-        this.createdDate = createdDate;
-        this.modifiedDate = modifiedDate;
-    }
+    @Column
+    String name;
 
-    public Long getId() {
-        return id;
-    }
+    @Column
+    String artist;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+    @Column
+    ArrayList<String> songs;
 
-    public String getName() {
-        return name;
-    }
+    @Column
+    Date releaseDate;
 
-    public void setName(String name) {
-        this.name = name;
-    }
+    @Column
+    boolean inStock;
 
-    public String getArtist() {
-        return artist;
-    }
+    @Column
+    Instant createdDate;
 
-    public void setArtist(String artist) {
-        this.artist = artist;
-    }
+    @Column
+    Instant modifiedDate;
 
-    public ArrayList<String> getSongs() {
-        return songs;
-    }
 
-    public void setSongs(ArrayList<String> songs) {
-        this.songs = songs;
-    }
 
-    public Date getReleaseDate() {
-        return releaseDate;
-    }
-
-    public boolean isInStock() {
-        return inStock;
-    }
-
-    public void setInStock(boolean inStock) {
-        this.inStock = inStock;
-    }
-
-    public Instant getCreatedDate() {
-        return createdDate;
-    }
-
-    public void setCreatedDate(Instant createdDate) {
-        this.createdDate = createdDate;
-    }
-
-    public Instant getModifiedDate() {
-        return modifiedDate;
-    }
-
-    public void setModifiedDate(Instant modifiedDate) {
-        this.modifiedDate = modifiedDate;
-    }
-
-    @Override
-    public String toString() {
-        return "Record{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", artist='" + artist + '\'' +
-                ", songs=" + songs +
-                ", releaseDate=" + releaseDate +
-                ", inStock=" + inStock +
-                ", createdDate=" + createdDate +
-                ", modifiedDate=" + modifiedDate +
-                '}';
-    }
 }
