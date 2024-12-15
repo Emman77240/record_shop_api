@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
 
@@ -45,5 +46,16 @@ public class RecordShopServiceImpl implements RecordShopService{
 
         return recordShopRepository.save(myRecord);
     }
+
+    @Override
+    public HashMap<String, Boolean> deleteRecordById(Long id) {
+        Record record = recordShopRepository.findById(id).orElseThrow(() -> new RecordNotFoundException("Record not found for this id: " + id));
+
+        recordShopRepository.delete(record);
+        HashMap<String, Boolean> response = new HashMap<>();
+        response.put("deleted", Boolean.TRUE);
+        return response;
+    }
+
 
 }
