@@ -32,7 +32,7 @@ class RecordShopRepositoryTest {
     @DisplayName("getAllRecords returns with a list of records")
     public void testGetAllRecords() throws ParseException {
         // Arrange
-        Record record = new Record(1L, "ABBA", "Abba", List.of(new String[]{"Waterloo", "Chiquitita", "Money, Money, Money", "Lay All Your Love", "Dancing Queen", "Gimme! Gimme! Gimme!"}), new SimpleDateFormat("yyyy-MM-dd").parse("1975-04-21"), true, new SimpleDateFormat("yyyy-MM-dd").parse("2024-12-02").toInstant(), new SimpleDateFormat("yyyy-MM-dd").parse("2024-12-02").toInstant());
+        Record record = new Record(1L, "ABBA", "Abba", List.of(new String[]{"Waterloo", "Chiquitita", "Money, Money, Money", "Lay All Your Love", "Dancing Queen", "Gimme! Gimme! Gimme!"}), 1975, true);
         List<Record> mockRecords = new ArrayList<>();
         mockRecords.add(record);
 

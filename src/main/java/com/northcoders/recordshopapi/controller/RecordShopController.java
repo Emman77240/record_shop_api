@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/v1/recordshop")
@@ -22,6 +23,13 @@ public class RecordShopController {
         List<Record> records = recordShopService.getAllRecords();
         return new ResponseEntity<>(records, HttpStatus.OK);
     }
+    
+    @GetMapping({"/{recordId}"})
+    public ResponseEntity<Optional<Record>> getRecordById(@PathVariable Long recordId) {
+        Optional<Record> record = recordShopService.getRecordById(recordId);
+        
+        return new ResponseEntity<>(record, HttpStatus.OK);
+    }
 
     @PostMapping
     public ResponseEntity<Record> addRecord(@RequestBody Record record) {
@@ -29,5 +37,12 @@ public class RecordShopController {
         HttpHeaders httpHeaders = new HttpHeaders();
         httpHeaders.add("record", "/api/v1/recordshop/" + newRecord.getId().toString());
         return new ResponseEntity<>(newRecord, httpHeaders, HttpStatus.CREATED);
+    }
+
+    @PutMapping({"/{recordId}"})
+    public ResponseEntity<Record> updateRecordById(@RequestBody Record record, @PathVariable Long recordId) {
+        Record recordToUpdate = recordShopService.updateRecord(record, recordId);
+
+        return new ResponseEntity<>(recordToUpdate, HttpStatus.OK);
     }
 }
